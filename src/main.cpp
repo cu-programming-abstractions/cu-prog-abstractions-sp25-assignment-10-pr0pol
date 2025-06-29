@@ -1,21 +1,23 @@
+
+
 /*
  * Main Program
- * 
+ *
  * This program implements a knight moves solution using BFS (Breadth-First Search):
- * 
+ *
  * 1. Test Cases:
  *    - Same position test (0 moves)
  *    - Adjacent knight moves
  *    - Standard chess problems
  *    - Negative coordinate handling
  *    - Large distance moves
- * 
+ *
  * 2. Output Format:
  *    - Shows start and target positions
  *    - Displays minimum number of moves
  *    - Shows complete path of moves
  *    - Verifies path correctness
- * 
+ *
  * 3. Test Verification:
  *    - Checks path validity (each move is a valid knight move)
  *    - Verifies path length matches minimum moves
@@ -115,16 +117,16 @@ int main() {
         totalTests++;
         Pos start = {0, 0};
         Pos target = {0, 0};
-        
+
         bool testPassed = printResults("Same Position Test", start, target);
-        
+
         // Additional verification for same position
         int moves = minKnightMoves(start, target);
         if (moves != 0) {
             cout << "X Same position should require 0 moves, got " << moves << "\n";
             testPassed = false;
         }
-        
+
         if (testPassed) passedTests++;
     }
 
@@ -133,16 +135,16 @@ int main() {
         totalTests++;
         Pos start = {0, 0};
         Pos target = {2, 1};  // Classic knight move
-        
+
         bool testPassed = printResults("Single Knight Move Test", start, target);
-        
+
         // Should be exactly 1 move
         int moves = minKnightMoves(start, target);
         if (moves != 1) {
             cout << "X Single knight move should require 1 move, got " << moves << "\n";
             testPassed = false;
         }
-        
+
         if (testPassed) passedTests++;
     }
 
@@ -151,9 +153,9 @@ int main() {
         totalTests++;
         Pos start = {0, 0};
         Pos target = {0, 2};  // Requires 2 moves minimum
-        
+
         bool testPassed = printResults("Two Knight Moves Test", start, target);
-        
+
         if (testPassed) passedTests++;
     }
 
@@ -162,9 +164,9 @@ int main() {
         totalTests++;
         Pos start = {0, 0};
         Pos target = {-2, -1};
-        
+
         bool testPassed = printResults("Negative Coordinates Test", start, target);
-        
+
         if (testPassed) passedTests++;
     }
 
@@ -173,9 +175,9 @@ int main() {
         totalTests++;
         Pos start = {0, 0};
         Pos target = {7, 7};  // Corner of standard chessboard
-        
+
         bool testPassed = printResults("Large Distance Test", start, target);
-        
+
         if (testPassed) passedTests++;
     }
 
@@ -184,14 +186,14 @@ int main() {
         totalTests++;
         Pos start = {1, 1};
         Pos target = {4, 5};
-        
+
         bool testPassed = printResults("Asymmetric Move Test", start, target);
-        
+
         if (testPassed) passedTests++;
     }
 
     cout << "\nTest Summary: " << passedTests << "/" << totalTests << " tests passed\n";
-    
+
     if (passedTests == totalTests) {
         cout << "All tests passed! Knight moves implementation is working correctly.\n";
     } else {

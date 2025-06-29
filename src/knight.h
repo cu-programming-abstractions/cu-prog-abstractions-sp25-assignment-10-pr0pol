@@ -1,17 +1,18 @@
+
 /*
- * 
+ *
  * This file defines the data structures and functions for solving the knight moves problem:
- * 
+ *
  * 1. Position Structure:
  *    - row: integer representing the row coordinate (0-based)
  *    - col: integer representing the column coordinate (0-based)
  *    - operator==: comparison operator for position equality
- * 
+ *
  * 2. Knight Movement Functions:
  *    - minKnightMoves(): Find minimum moves for knight to reach target
  *    - getKnightPath(): Get the actual path of moves
  *    - Helper functions for BFS implementation
- * 
+ *
  * 3. Algorithm:
  *    - Uses BFS (Breadth-First Search) to find shortest path
  *    - Knight moves in L-shape: 2 squares in one direction, 1 in perpendicular
@@ -28,11 +29,11 @@ using namespace std;
 
 struct Pos {
     int row, col;
-    
+
     bool operator==(const Pos& other) const {
         return row == other.row && col == other.col;
     }
-    
+
     bool operator!=(const Pos& other) const {
         return !(*this == other);
     }
